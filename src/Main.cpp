@@ -9,7 +9,7 @@ namespace AvirA
 	{
 		C_Log::Info("AvirA SDK Generator");
 		C_Log::Info("Usage: AvirASdkGen.exe <dump.cs> [out_dir] [options]");
-		C_Log::Info("Without out_dir the SDK goes to Sdk folder next to this exe.");
+		C_Log::Info("Without out_dir the offsets go to Offsets folder next to this exe.");
 		C_Log::Info("You can also drag and drop dump.cs onto the exe.");
 		C_Log::Info("Options:");
 		C_Log::Info("  --image <part>       only images with this part in name, repeatable");
@@ -42,7 +42,7 @@ namespace AvirA
 		if (count > 2 && args[2][0] != '-')
 			options.out = args[2];
 		else
-			options.out = ExeDir() + "\\Sdk";
+			options.out = ExeDir() + "\\Offsets";
 		int first = (count > 2 && args[2][0] != '-') ? 3 : 2;
 		for (int i = first; i < count; i++)
 		{
